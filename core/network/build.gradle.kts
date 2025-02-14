@@ -41,8 +41,9 @@ dependencies {
     implementation(libs.retrofit.adapters.result)
     implementation(libs.kotlinx.serialization)
     implementation(libs.retrofit.kotlinx.serialization.converter)
-    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+
+    implementation(projects.core.common)
 }

@@ -2,11 +2,12 @@ package com.ainsln.core.network.retrofit
 
 import com.ainsln.core.network.NetworkDataSource
 import com.ainsln.core.network.model.auth.AuthBody
-import com.ainsln.core.network.model.unwrapResponse
 import com.ainsln.core.network.utils.token.SessionManager
+import com.ainsln.core.network.utils.unwrapResponse
+import com.ainsln.core.network.utils.wrapNetworkException
 import javax.inject.Inject
 
-class RetrofitDataSource @Inject constructor(
+internal class RetrofitDataSource @Inject constructor(
     private val retrofitApi: RetrofitApi,
     private val sessionManager: SessionManager
 ) : NetworkDataSource {
@@ -15,18 +16,18 @@ class RetrofitDataSource @Inject constructor(
         portal: String,
         authBody: AuthBody
     ): Result<Unit> {
-        return runCatching {
+       return runCatching {
             val url = "$portal/api/2.0/authentication"
             val data = retrofitApi.authenticate(url, authBody)
             sessionManager.saveAuthData(portal, data.response.token)
-        }
+        }.wrapNetworkException()
     }
 
     override suspend fun logout(): Result<Unit> {
         return runCatching {
             retrofitApi.logout()
             sessionManager.deleteAuthData()
-        }
+        }.wrapNetworkException()
     }
 
     override suspend fun getMyDocuments() = retrofitApi.getMyDocuments().unwrapResponse()

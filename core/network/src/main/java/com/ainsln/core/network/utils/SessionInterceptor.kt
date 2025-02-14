@@ -7,7 +7,7 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
 
-class SessionInterceptor @Inject constructor(
+internal class SessionInterceptor @Inject constructor(
     private val sessionManager: SessionManager
 ) : Interceptor {
 
