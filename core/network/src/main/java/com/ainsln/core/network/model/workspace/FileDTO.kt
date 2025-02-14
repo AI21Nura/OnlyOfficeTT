@@ -10,10 +10,15 @@ data class FileDTO(
     val contentLength: String,
     val fileExst: String,
     val title: String,
+    val canShare: Boolean,
+    val mute: Boolean,
     val shared: Boolean,
     val created: String,
     val updated: String,
     val createdBy: UserDTO,
     val updatedBy: UserDTO,
-    val webUrl: String
+    val webUrl: String,
+    val originId: Int? = null,
+    val originTitle: String? = null,
+    val autoDelete: String? = null
 )

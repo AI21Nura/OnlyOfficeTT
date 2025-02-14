@@ -3,16 +3,15 @@ package com.ainsln.core.network.model.workspace
 import kotlinx.serialization.Serializable
 
 /**
- * Removed fields from original JSON:
+ * Ignored fields from original JSON:
+ * - Version
  * - Detailed security settings
  * - Various accessibility settings
  * - External rights information
- * - Thumbnail status
- * - File entry types
- * - Mute/pinned/private statuses
+ * - Thumbnail status, Comment
+ * - File entry types & Pure length
  * - Various URLs except main web URL
  * - Indexing information
- * - Root folder information
  */
 @Serializable
 data class WorkspaceDTO(

@@ -7,6 +7,7 @@ data class UserDTO(
     val id: String,
     val displayName: String,
     val avatar: String,
+    val avatarOriginal: String,
     val avatarSmall: String,
     val profileUrl: String,
     val hasAvatar: Boolean,
