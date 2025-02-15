@@ -2,7 +2,7 @@ package com.ainsln.core.network.model
 
 import com.ainsln.core.network.model.auth.AuthResponseData
 import com.ainsln.core.network.model.profile.UserProfileDTO
-import com.ainsln.core.network.model.workspace.WorkspaceDTO
+import com.ainsln.core.network.model.storage.StorageDTO
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -22,4 +22,4 @@ data class Link(
 
 typealias AuthResponse = OnlyOfficeResponse<AuthResponseData>
 typealias UserProfileResponse = OnlyOfficeResponse<UserProfileDTO>
-typealias WorkspaceResponse = OnlyOfficeResponse<WorkspaceDTO>
+typealias StorageResponse = OnlyOfficeResponse<StorageDTO>

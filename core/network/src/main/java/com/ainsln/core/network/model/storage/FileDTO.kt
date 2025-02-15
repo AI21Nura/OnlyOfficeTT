@@ -1,4 +1,4 @@
-package com.ainsln.core.network.model.workspace
+package com.ainsln.core.network.model.storage
 
 import kotlinx.serialization.Serializable
 
@@ -18,6 +18,7 @@ data class FileDTO(
     val createdBy: UserDTO,
     val updatedBy: UserDTO,
     val webUrl: String,
+    //Trash fields
     val originId: Int? = null,
     val originTitle: String? = null,
     val autoDelete: String? = null

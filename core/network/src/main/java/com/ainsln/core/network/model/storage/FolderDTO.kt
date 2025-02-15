@@ -1,4 +1,4 @@
-package com.ainsln.core.network.model.workspace
+package com.ainsln.core.network.model.storage
 
 import kotlinx.serialization.Serializable
 
@@ -7,9 +7,11 @@ data class FolderDTO(
     val id: Long,
     val parentId: Long,
     val rootFolderId: Long,
+    val rootFolderType: Int,
     val title: String,
     val filesCount: Int,
     val foldersCount: Int,
+    val access: Int,
     val mute: Boolean,
     val pinned: Boolean,
     val private: Boolean,

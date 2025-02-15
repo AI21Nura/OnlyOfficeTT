@@ -1,4 +1,4 @@
-package com.ainsln.core.network.model.workspace
+package com.ainsln.core.network.model.storage
 
 import kotlinx.serialization.Serializable
 

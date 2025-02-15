@@ -1,4 +1,4 @@
-package com.ainsln.core.network.model.workspace
+package com.ainsln.core.network.model.storage
 
 import kotlinx.serialization.Serializable
 
@@ -9,15 +9,15 @@ import kotlinx.serialization.Serializable
  * - Various accessibility settings
  * - External rights information
  * - Thumbnail status, Comment
- * - File entry types & Pure length
+ * - Pure length
  * - Various URLs except main web URL
  * - Indexing information
  */
 @Serializable
-data class WorkspaceDTO(
-    val files: List<FileDTO> = emptyList(),
-    val folders: List<FolderDTO> = emptyList(),
-    val current: FolderDTO? = null,
+data class StorageDTO(
+    val files: List<FileDTO>,
+    val folders: List<FolderDTO>,
+    val current: FolderDTO,
     val startIndex: Int,
     val count: Int,
     val total: Int,

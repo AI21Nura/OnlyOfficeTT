@@ -31,6 +31,7 @@ internal class RetrofitDataSource @Inject constructor(
     }
 
     override suspend fun getMyDocuments() = retrofitApi.getMyDocuments().unwrapResponse()
+    override suspend fun getFolderById(id: Long) = retrofitApi.getFolderById(id).unwrapResponse()
     override suspend fun getTrash() = retrofitApi.getTrash().unwrapResponse()
     override suspend fun getRooms() = retrofitApi.getRooms().unwrapResponse()
     override suspend fun getMyProfile() = retrofitApi.getMyProfile().unwrapResponse()
