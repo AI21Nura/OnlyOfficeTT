@@ -23,3 +23,5 @@ dependencyResolutionManagement {
 rootProject.name = "OnlyOffice"
 include(":app")
 include(":core:network")
+include(":core:common")
+include(":core:data")
