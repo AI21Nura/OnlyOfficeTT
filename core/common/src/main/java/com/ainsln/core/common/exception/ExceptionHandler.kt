@@ -12,12 +12,12 @@ internal class BaseExceptionHandler @Inject constructor(
 ) : ExceptionHandler {
 
     override fun handleException(e: Throwable): AppException {
-        val appException = when(e) {
-            is NetworkException -> handleNetworkException(e)
-            else -> AppException.UnknownException
+        val (appException, cause) = when(e) {
+            is NetworkException -> handleNetworkException(e) to e.cause
+            else -> AppException.UnknownException to e
         }
         val exceptionType = e.javaClass.simpleName
-        logger.e(TAG, "$exceptionType caused: ${e.cause}")
+        logger.e(TAG, "$exceptionType caused: $cause")
         return appException
     }
 
