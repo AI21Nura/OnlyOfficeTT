@@ -7,5 +7,5 @@ interface SessionManager {
     suspend fun saveAuthData(portal: String, token: String)
     suspend fun deleteAuthData()
     fun getToken(): Flow<String>
-    fun getPortal(): Flow<String>
+    fun getPortal(includeScheme: Boolean = false): Flow<String>
 }

@@ -22,7 +22,7 @@ internal class BaseSessionManager @Inject constructor(
     override suspend fun saveAuthData(portal: String, token: String) {
         dataStore.edit { preferences ->
             preferences[KEY_TOKEN] = token
-            preferences[KEY_PORTAL] = portal.removePrefix("https://")
+            preferences[KEY_PORTAL] = portal.removePrefix(SCHEME)
         }
     }
 
@@ -38,14 +38,18 @@ internal class BaseSessionManager @Inject constructor(
         }
     }
 
-    override fun getPortal(): Flow<String> {
+    override fun getPortal(includeScheme: Boolean): Flow<String> {
         return dataStore.data.map { preferences ->
-            preferences[KEY_PORTAL] ?: ""
+            preferences[KEY_PORTAL]?.let { portal ->
+                if (includeScheme) SCHEME + portal
+                else portal
+            } ?: ""
         }
     }
 
     companion object {
         private val KEY_TOKEN = stringPreferencesKey("token")
         private val KEY_PORTAL = stringPreferencesKey("portal")
+        private const val SCHEME = "https://"
     }
 }
