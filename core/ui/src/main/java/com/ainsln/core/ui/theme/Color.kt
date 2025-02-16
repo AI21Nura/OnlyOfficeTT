@@ -1,4 +1,4 @@
-package com.ainsln.onlyoffice.ui.theme
+package com.ainsln.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

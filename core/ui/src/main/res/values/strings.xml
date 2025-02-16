@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_auth">Incorrect login details</string>
+    <string name="error_no_connection">No internet connection</string>
+    <string name="error_invalid_response">Something went wrong</string>
+    <string name="error_not_found">Data not found</string>
+    <string name="error_unknown">An unexpected error</string>
+    <string name="hide_password">Hide password</string>
+    <string name="show_password">Show password</string>
+    <string name="back">Back</string>
+    <string name="retry">Retry</string>
+</resources>
