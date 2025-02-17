@@ -1,6 +1,5 @@
 package com.ainsln.core.network.utils.token
 
-import android.service.notification.Condition.SCHEME
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -43,7 +42,7 @@ internal class BaseSessionManager @Inject constructor(
     override fun getPortal(includeScheme: Boolean): Flow<String> {
         return dataStore.data.map { preferences ->
             preferences[KEY_PORTAL]?.let { portal ->
-                if (includeScheme) SCHEME + portal
+                if (includeScheme) BASE_SCHEME + portal
                 else portal
             } ?: ""
         }

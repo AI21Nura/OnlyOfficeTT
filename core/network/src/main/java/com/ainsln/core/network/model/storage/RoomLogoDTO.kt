@@ -4,9 +4,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class RoomLogoDTO(
-    val original: String,
-    val large: String,
-    val medium: String,
-    val small: String,
-    val color: String
+    val original: String? = null,
+    val large: String? = null,
+    val medium: String? = null,
+    val small: String? = null,
+    val color: String? = null
 )
