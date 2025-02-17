@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rooms">Rooms</string>
+    <string name="empty_rooms_list">No rooms yet</string>
+    <string name="empty_rooms_list_subtext">Rooms you join will appear here</string>
+</resources>
