@@ -9,4 +9,7 @@
     <string name="show_password">Show password</string>
     <string name="back">Back</string>
     <string name="retry">Retry</string>
+
+    <string name="empty_folder_text">No files here</string>
+    <string name="empty_folder_subtext">Add new files to get started</string>
 </resources>
