@@ -21,7 +21,8 @@ class RoomRepositoryImpl @Inject constructor(
             networkCall = NetworkDataSource::getRooms,
             mapper = {
                 val portal = sessionManager.getPortal(includeScheme = true).first()
-                mapper.dtoToDomain(it, portal)
+                val token = sessionManager.getToken().first()
+                mapper.dtoToDomain(it, portal, token)
             }
         )
     }
