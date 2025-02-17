@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trash">Trash</string>
+    <string name="empty_trash_text">Trash is empty</string>
+    <string name="empty_trash_subtext">Your deleted files will appear here</string>
+</resources>
