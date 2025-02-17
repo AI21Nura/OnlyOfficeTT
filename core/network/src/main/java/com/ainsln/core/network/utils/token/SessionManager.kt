@@ -8,4 +8,6 @@ interface SessionManager {
     suspend fun deleteAuthData()
     fun getToken(): Flow<String>
     fun getPortal(includeScheme: Boolean = false): Flow<String>
+
+    companion object { const val BASE_SCHEME = "https://" }
 }

@@ -1,9 +1,11 @@
 package com.ainsln.core.network.utils.token
 
+import android.service.notification.Condition.SCHEME
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
+import com.ainsln.core.network.utils.token.SessionManager.Companion.BASE_SCHEME
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -22,7 +24,7 @@ internal class BaseSessionManager @Inject constructor(
     override suspend fun saveAuthData(portal: String, token: String) {
         dataStore.edit { preferences ->
             preferences[KEY_TOKEN] = token
-            preferences[KEY_PORTAL] = portal.removePrefix(SCHEME)
+            preferences[KEY_PORTAL] = portal.removePrefix(BASE_SCHEME)
         }
     }
 
@@ -50,6 +52,5 @@ internal class BaseSessionManager @Inject constructor(
     companion object {
         private val KEY_TOKEN = stringPreferencesKey("token")
         private val KEY_PORTAL = stringPreferencesKey("portal")
-        private const val SCHEME = "https://"
     }
 }
