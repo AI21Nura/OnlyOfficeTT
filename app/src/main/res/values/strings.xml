@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">OnlyOffice</string>
+
+    <string name="documents">Documents</string>
+    <string name="rooms">Rooms</string>
+    <string name="trash">Trash</string>
+    <string name="profile">Profile</string>
 </resources>
